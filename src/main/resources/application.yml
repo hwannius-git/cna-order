@@ -66,7 +66,6 @@ spring:
         event-out:
           destination: shop
           contentType: application/json
-
 api:
   url:
     delivery: http://delivery:8080

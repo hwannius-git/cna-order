@@ -14,11 +14,28 @@ public class Order {
     private String productId;
     private String qty;
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    private String status;
+
     @PostPersist
     public void onPostPersist(){
         Ordered ordered = new Ordered();
         BeanUtils.copyProperties(this, ordered);
         ordered.publishAfterCommit();
+
+
+    }
+
+    @PostUpdate
+    public void onPostUpdate(){
+        System.out.println("dsfsfsdfsdfsdf");
 
 
     }
